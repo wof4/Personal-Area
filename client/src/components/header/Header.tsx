@@ -37,7 +37,7 @@ const Header = (props: PropsType) => {
         setOpenContact(false)
     };
     const createNewContact = (data: ContactDataType) => {
-        dispatch(createNewContactTc(data))
+        dispatch(createNewContactTc(data, user._id))
         handleCloseModal()
     }
 

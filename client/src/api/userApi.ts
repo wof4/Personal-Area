@@ -25,6 +25,16 @@ const UserApi = {
     }
   },
 
+  async deleteUser( userId: string) {
+    try {
+      return await instance
+        .delete(`/user/?userId=${userId}`)
+        .then((res) => res.data);
+    } catch (err) {
+      return { message: RESOLVE_ERROR };
+    }
+  },
+
 };
 
 export default UserApi;

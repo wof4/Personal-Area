@@ -14,30 +14,30 @@ const ContactApi = {
     }
   },
 
-  async createNewContact(data: ContactDataType) {
+  async createNewContact(data: ContactDataType, userId:string) {
     try {
       return await instance
-        .post('/create', data)
+        .post('/create', {data, userId})
         .then((res) => res.data);
     } catch (err) {
       return { message: RESOLVE_ERROR };
     }
   },
 
-  async getContacts() {
+  async getContacts(userId:string) {
     try {
       return await instance
-        .get('/contact')
+        .get(`/contact/?userId=${userId}`)
         .then((res) => res.data);
     } catch (err) {
       return { message: RESOLVE_ERROR };
     }
   },
 
-  async deleteContact(contactId: string) {
+  async deleteContact(  contactId: string, userId: string) {
     try {
       return await instance
-        .delete(`/contact/?contactId=${contactId}`)
+        .delete(`/contact/?contactId=${contactId}&userId=${userId}`)
         .then((res) => res.data);
     } catch (err) {
       return { message: RESOLVE_ERROR };

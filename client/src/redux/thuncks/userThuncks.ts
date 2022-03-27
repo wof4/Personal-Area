@@ -1,5 +1,4 @@
 import { UserDataType } from './../../types';
-import ContactApi from "../../api/ContactApi";
 import UserApi from "../../api/userApi";
 import { thunkType } from "../../types";
 import { actions } from "../reducers/mainReducer";
@@ -16,7 +15,7 @@ export const updateUserDataTc = (data: UserDataType): thunkType => (dispatch) =>
 };
 
 export const deleteUsertTc = (userId:string): thunkType => (dispatch) => {
-    ContactApi.deleteContact(userId).then((res) => {
+    UserApi.deleteUser(userId).then((res) => {
         if (res.statusCode !== 200) {
             dispatch(actions.setAlert({message:res.message, type:'error'}))
         } else {

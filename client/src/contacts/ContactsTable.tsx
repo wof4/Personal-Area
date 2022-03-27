@@ -20,7 +20,7 @@ function ContactsPage() {
         }} >
             <Header user={user} />
             {
-                contacts && <ContactsTable contacts={contacts} />
+                contacts && <ContactsTable contacts={contacts} userId={user._id}/>
             }
         </Box>
     );

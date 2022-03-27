@@ -5,12 +5,13 @@ const User = require('../models/User');
 module.exports = async (req, res) => {
 
     try {
-        const { contactId, userId } = req.query
-        console.log(contactId, userId);
+        const { userId } = req.query
 
-        await User.updateOne({ _id: userId }, { $pull: { contacts: { $in: contactId } } },)
+        const user = await User.findOne({ _id: userId })
 
-        await Contact.deleteOne({ _id: contactId })
+        await User.updateOne({ _id: userId }, { $pull: { contacts: { $in: user.contacts } } },)
+
+        await User.deleteOne({ _id: userId })
 
         res.json({ statusCode: 200, message: "Контакт удален" })
 

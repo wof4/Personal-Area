@@ -15,10 +15,11 @@ import { Tooltip } from '@mui/material';
 
 type PropsType = {
     contacts: Array<ContactDataType>
+    userId: string
 }
 
 export default function ContactsTable(props: PropsType) {
-    const { contacts } = props
+    const { contacts, userId } = props
     const dispatch = useDispatch()
     const searchString = useSelector(getSearchString)
     const [open, setOpen] = React.useState(false);
@@ -30,12 +31,12 @@ export default function ContactsTable(props: PropsType) {
     };
 
     const deleteContact = (contactId: string) => {
-        dispatch(deleteContactTc(contactId));
+        dispatch(deleteContactTc(contactId, userId));
         setOpen(false);
     };
 
     const setChangetData = (data: ContactDataType) => {
-        dispatch(updateContactDataTc(data));
+        dispatch(updateContactDataTc(data, userId));
         setOpen(false);
     };
 

@@ -14,7 +14,7 @@ export const sendUserDataToEnterTc = (data: DataEnterType, type: string): thunkT
             console.log(res)
             dispatch(actions.setAlert({message:res.message, type:'success'}))
             dispatch(actions.setUserData(res.user))
-            dispatch(getContactTc())
+            dispatch(getContactTc(res.user._id))
             dispatch(actions.setAuthStatus(true))
         }
         dispatch(actions.setLoadingStatus(false))
