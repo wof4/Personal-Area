@@ -1,0 +1,17 @@
+{
+  "name": "adamov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "client": "npm run start --prefix client",
+    "server": "nodemon src/server.js",
+    "start": "concurrently \"npm run start --prefix server\" \"npm run start --prefix client\"",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run start --prefix client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
