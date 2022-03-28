@@ -47,7 +47,7 @@ const Fields = (props: PropsType) => {
                     inputComponent: PhoneMaskCustom as any,
                     startAdornment:
                         <InputAdornment position="start">
-                            {!values.phone && "+7"}
+                            {!values.phone && <p> &nbsp; +7</p>}
                         </InputAdornment>
                 }}
             />
@@ -56,7 +56,6 @@ const Fields = (props: PropsType) => {
                 label="Email"
                 sx={{ m: 1, width: '43ch' }}
                 disabled={isLoading}
-                defaultValue="www."
                 onChange={handleChange('email')}
             />
             <TextField
@@ -64,7 +63,6 @@ const Fields = (props: PropsType) => {
                 label="Telegram"
                 sx={{ m: 1, width: '43ch' }}
                 disabled={isLoading}
-                defaultValue="https://"
                 onChange={handleChange('telegram')}
             />
         </>

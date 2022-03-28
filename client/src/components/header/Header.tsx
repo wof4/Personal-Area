@@ -31,7 +31,6 @@ const Header = (props: PropsType) => {
     const [open, setOpen] = React.useState(false);
     const [openContact, setOpenContact] = React.useState(false);
 
-
     const handleCloseModal = () => {
         setOpen(false);
         setOpenContact(false)
@@ -72,7 +71,7 @@ const Header = (props: PropsType) => {
         }}>
             <Stack direction="row" width='100%' display='flex' justifyContent='space-around'>
                 <Box sx={{ display: 'flex' }}>
-                    <Item sx={{ margin: 1 }} >{user.name}</Item>
+                    <Item sx={{ margin: 1 }} >Your name: {user.name}</Item>
                     <Tooltip title="edit your data" placement="bottom">
                         <Fab sx={{ margin: 1 }} size="small" color="success" aria-label="add"
                             onClick={() => { setOpen(true) }}
@@ -81,14 +80,16 @@ const Header = (props: PropsType) => {
                         </Fab>
                     </Tooltip>
                 </Box>
-                <Tooltip title="create new contact" placement="bottom">
-                    <Fab sx={{ margin: 1 }} size="small" color="primary" aria-label="add"
-                        onClick={() => { setOpenContact(true) }}
-                    >
-                        <AddIcon />
-                    </Fab>
-                </Tooltip>
-
+                <Box sx={{ display: 'flex' }}>
+                <Item sx={{ margin: 1 }} >Contacts: {user.contacts.length}</Item>
+                    <Tooltip title="create new contact" placement="bottom">
+                        <Fab sx={{ margin: 1 }} size="small" color="primary" aria-label="add"
+                            onClick={() => { setOpenContact(true) }}
+                        >
+                            <AddIcon />
+                        </Fab>
+                    </Tooltip>
+                </Box>
             </Stack>
             <SearchField
                 setSearchString={setSearchString}

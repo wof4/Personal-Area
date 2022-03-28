@@ -73,7 +73,7 @@ export default function ContactsTable(props: PropsType) {
                 </TableHead>
                 <TableBody>
                     {contactList.map((contact) => (
-                        <Tooltip title="click to edit contact"
+                        <Tooltip key={contact._id} title="click to edit contact"
                             placement="bottom-start">
                             <TableRow
                                 onClick={() => {

@@ -16,6 +16,7 @@ export type UserDataType = {
   _id: string
   name: string
   password: string
+  contacts:Array<string>
 };
 
 export type DataEnterType = {

@@ -138,7 +138,7 @@ function NewContactModal(props: PropsType) {
   );
 }
 
-export default memo(NewContactModal);
+export default NewContactModal;
 
 
 

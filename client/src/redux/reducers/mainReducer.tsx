@@ -21,6 +21,7 @@ const initialState: initialStateType = {
         _id: '',
         name: '',
         password: '',
+        contacts:[],
     },
     contactsData: null,
     isLoading: false,

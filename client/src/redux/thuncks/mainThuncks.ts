@@ -11,7 +11,6 @@ export const sendUserDataToEnterTc = (data: DataEnterType, type: string): thunkT
         if (res.statusCode !== 200) {
             dispatch(actions.setAlert({message:res.message, type:'error'}))
         } else {
-            console.log(res)
             dispatch(actions.setAlert({message:res.message, type:'success'}))
             dispatch(actions.setUserData(res.user))
             dispatch(getContactTc(res.user._id))

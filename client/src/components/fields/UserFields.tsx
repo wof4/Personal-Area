@@ -55,7 +55,7 @@ const UserFields = (props: PropsType) => {
                     onBlur={(e) => handleBlur(e.target.value.length <= 2, 'name')}
                     label={'Name'}
                     value={values.name}
-                    sx={{ m: 1, width: '43ch'}}
+                    sx={{ m: 1, width: '43ch' }}
                     disabled={isLoading}
                     onChange={handleChange('name')}
                     helperText={NAME_ERROR}

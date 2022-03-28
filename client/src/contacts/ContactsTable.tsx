@@ -1,5 +1,5 @@
-import { Box } from '@mui/system';
 import React from 'react';
+import { Box } from '@mui/system';
 import { useSelector } from 'react-redux';
 import ContactsTable from '../components/table/TableContacts';
 import Header from '../components/header/Header';
