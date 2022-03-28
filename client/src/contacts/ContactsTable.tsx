@@ -18,7 +18,7 @@ function ContactsPage() {
             flexDirection: 'column',
             alignItems: 'center'
         }} >
-            <Header user={user} />
+            <Header user={user} contactsCounter={contacts.length}/>
             {
                 contacts && <ContactsTable contacts={contacts} userId={user._id}/>
             }

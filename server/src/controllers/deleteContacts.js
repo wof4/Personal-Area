@@ -6,7 +6,6 @@ module.exports = async (req, res) => {
 
     try {
         const { contactId, userId } = req.query
-        console.log(contactId, userId);
 
         await User.updateOne({ _id: userId }, { $pull: { contacts: { $in: contactId } } },)
 

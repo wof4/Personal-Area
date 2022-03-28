@@ -16,6 +16,7 @@ import { actions } from '../../redux/reducers/mainReducer';
 
 type PropsType = {
     user: UserDataType
+    contactsCounter: number
 }
 const Item = styled(Paper)(() => ({
     backgroundColor: '#efefefd6',
@@ -26,7 +27,7 @@ const Item = styled(Paper)(() => ({
 }));
 
 const Header = (props: PropsType) => {
-    const { user } = props
+    const { user, contactsCounter } = props
     const dispatch = useDispatch()
     const [open, setOpen] = React.useState(false);
     const [openContact, setOpenContact] = React.useState(false);
@@ -81,7 +82,7 @@ const Header = (props: PropsType) => {
                     </Tooltip>
                 </Box>
                 <Box sx={{ display: 'flex' }}>
-                <Item sx={{ margin: 1 }} >Contacts: {user.contacts.length}</Item>
+                    <Item sx={{ margin: 1 }} >Contacts: {contactsCounter}</Item>
                     <Tooltip title="create new contact" placement="bottom">
                         <Fab sx={{ margin: 1 }} size="small" color="primary" aria-label="add"
                             onClick={() => { setOpenContact(true) }}

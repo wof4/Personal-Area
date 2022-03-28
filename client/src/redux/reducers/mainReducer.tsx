@@ -9,7 +9,7 @@ import {
 
 type initialStateType = {
     userData: UserDataType
-    contactsData: Array<ContactDataType> | null,
+    contactsData: Array<ContactDataType>
     isLoading: boolean
     alert: AlertType
     isAuth: boolean
@@ -21,9 +21,9 @@ const initialState: initialStateType = {
         _id: '',
         name: '',
         password: '',
-        contacts:[],
+        contacts: [],
     },
-    contactsData: null,
+    contactsData: [],
     isLoading: false,
     alert: null,
     isAuth: false,
