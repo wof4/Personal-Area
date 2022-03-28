@@ -1,8 +1,8 @@
 import { Box } from '@mui/system';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Header from '../components/header/Header';
 import ContactsTable from '../components/table/TableContacts';
+import Header from '../components/header/Header';
 import { getAuthData, getContactsData } from '../selectors';
 
 function ContactsPage() {
